@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subash Saajan J — Full-Stack AI Engineer</title>
+<meta name="description" content="Subash Saajan J — Full-Stack AI Engineer building production AI systems: agentic LLM apps, RAG pipelines, and the web products that ship them. Python, TypeScript, LangGraph, AWS.">
+<meta name="author" content="Subash Saajan J">
+<link rel="canonical" href="https://subashsaajan.site/">
+<!-- max-image-preview:large lets Google show the portrait full-size; max-snippet:-1
+     lifts the snippet cap so AI Overviews can quote enough of the page to cite it. -->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<!-- Open Graph (link previews on LinkedIn, Slack, WhatsApp, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Subash Saajan J — Full-Stack AI Engineer">
+<meta property="og:description" content="Full-stack engineer building production AI systems: agentic LLM apps, RAG pipelines, and the web products that ship them.">
+<meta property="og:url" content="https://subashsaajan.site/">
+<meta property="og:image" content="https://subashsaajan.site/subash.jpeg">
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Subash Saajan J — Full-Stack AI Engineer">
+<meta name="twitter:description" content="Full-stack engineer building production AI systems: agentic LLM apps, RAG pipelines, and the web products that ship them.">
+<meta name="twitter:image" content="https://subashsaajan.site/subash.jpeg">
+
+<!-- Structured data. One @graph, three nodes cross-referenced by @id — the site,
+     the page, and the person — so search engines resolve one entity, not three
+     near-identical fragments they must guess how to merge. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://subashsaajan.site/#website",
+      "url": "https://subashsaajan.site/",
+      "name": "Subash Saajan J",
+      "publisher": { "@id": "https://subashsaajan.site/#subash" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://subashsaajan.site/#webpage",
+      "url": "https://subashsaajan.site/",
+      "name": "Subash Saajan J — Full-Stack AI Engineer",
+      "isPartOf": { "@id": "https://subashsaajan.site/#website" },
+      "about": { "@id": "https://subashsaajan.site/#subash" },
+      "primaryImageOfPage": "https://subashsaajan.site/subash.jpeg",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://subashsaajan.site/#subash",
+      "name": "Subash Saajan J",
+      "jobTitle": "Full-Stack AI Engineer",
+      "email": "subashsaajan@gmail.com",
+      "url": "https://subashsaajan.site/",
+      "image": "https://subashsaajan.site/subash.jpeg",
+      "address": { "@type": "PostalAddress", "addressLocality": "Tirunelveli", "addressRegion": "Tamil Nadu", "addressCountry": "IN" },
+      "worksFor": { "@type": "Organization", "name": "Sentellent" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Vellore Institute of Technology, Chennai" },
+      "knowsAbout": ["LangGraph", "Anthropic Claude", "RAG", "Python", "TypeScript", "AWS", "Next.js", "FastAPI", "PostgreSQL"],
+      "sameAs": [
+        "https://github.com/Subash-Saajan",
+        "https://www.linkedin.com/in/subash-saajan/"
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  :root {
+    --ink: #17191c;
+    --muted: #545b63;
+    --faint: #8b929b;
+    --line: #e4e7ec;
+    --paper: #f7f8fa;
+    --link: #0f7a63;
+    --link-hover: #12a081;
+    --accent: #0f7a63;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Charter', 'Georgia', 'Cambria', 'Times New Roman', serif;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 28px 80px;
+  }
+
+  /* ---- masthead ---- */
+  header.masthead {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding-bottom: 22px;
+  }
+  .portrait {
+    width: 96px;
+    height: 96px;
+    flex: 0 0 96px;
+    border-radius: 3px;
+    object-fit: cover;
+    filter: grayscale(100%);
+  }
+  .masthead h1 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    line-height: 1.1;
+  }
+  .masthead .role {
+    margin: 4px 0 0;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 18px;
+  }
+  .masthead .where {
+    margin: 6px 0 0;
+    font-size: 15px;
+    color: var(--faint);
+  }
+
+  /* ---- links row ---- */
+  nav.links {
+    margin: 14px 0 0;
+    font-size: 15.5px;
+    color: var(--muted);
+  }
+  nav.links a { color: var(--link); text-decoration: none; }
+  nav.links a:hover { color: var(--link-hover); text-decoration: underline; }
+  nav.links .sep { color: var(--line); margin: 0 8px; }
+
+  /* ---- sections ---- */
+  section { margin-top: 40px; }
+  h2 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    color: var(--accent);
+    margin: 0 0 16px;
+  }
+  p { margin: 0 0 14px; }
+  .lede { font-size: 19px; }
+  a { color: var(--link); }
+  a:hover { color: var(--link-hover); }
+
+  /* ---- skills ---- */
+  .skills { display: grid; gap: 8px; }
+  .skill-row { display: grid; grid-template-columns: 130px 1fr; gap: 12px; align-items: baseline; }
+  .skill-row .k { font-weight: 700; font-size: 15px; }
+  .skill-row .v { font-size: 16px; color: var(--muted); }
+
+  /* ---- entries ---- */
+  .entry { margin-bottom: 26px; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .entry-title { font-weight: 700; font-size: 19px; }
+  .entry-meta { font-style: italic; color: var(--faint); font-size: 15px; white-space: nowrap; }
+  .entry-sub { font-style: italic; color: var(--muted); font-size: 16px; margin: 1px 0 8px; }
+  .entry ul { margin: 8px 0 0; padding-left: 20px; }
+  .entry li { margin-bottom: 6px; }
+  .proj-links { font-size: 14.5px; font-style: normal; }
+  .proj-links a { text-decoration: none; }
+  .proj-links a:hover { text-decoration: underline; }
+
+  .stack { font-size: 14px; color: var(--faint); margin-top: 6px; font-style: italic; }
+
+  /* ---- compact project list ---- */
+  .proj-list { margin-top: 4px; }
+  .proj-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+    padding: 12px 0;
+    border-top: 1px solid var(--line);
+  }
+  .proj-item:first-child { border-top: 0; }
+  .proj-item .pi-main { flex: 1 1 340px; }
+  .proj-item .pi-name { font-weight: 700; font-size: 18px; }
+  .proj-item .pi-name a { color: var(--ink); text-decoration: none; }
+  .proj-item .pi-name a:hover { color: var(--link-hover); }
+  .proj-item .pi-desc { font-size: 15.5px; color: var(--muted); margin-top: 1px; }
+  .proj-item .pi-links { font-size: 14px; white-space: nowrap; }
+  .proj-item .pi-links a { text-decoration: none; margin-left: 12px; }
+  .proj-item .pi-links a:hover { text-decoration: underline; }
+  .proj-item .pi-links a:first-child { margin-left: 0; }
+
+  /* ---- footer ---- */
+  footer {
+    margin-top: 52px;
+    padding-top: 20px;
+    font-size: 14.5px;
+    color: var(--faint);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  footer a { color: var(--link); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 560px) {
+    body { font-size: 17px; }
+    .wrap { padding: 36px 20px 64px; }
+    header.masthead { gap: 18px; }
+    .portrait { width: 76px; height: 76px; flex-basis: 76px; }
+    .masthead h1 { font-size: 27px; }
+    .skill-row { grid-template-columns: 1fr; gap: 2px; }
+    .skill-row .k { font-size: 14px; text-transform: uppercase; letter-spacing: 0.8px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <img class="portrait" src="subash.jpeg" alt="Subash Saajan J">
+    <div>
+      <h1>Subash Saajan J</h1>
+      <p class="role">Full-Stack AI Engineer</p>
+      <p class="where">Tirunelveli, Tamil Nadu, India &middot; Remote</p>
+    </div>
+  </header>
+
+  <nav class="links">
+    <a href="mailto:subashsaajan@gmail.com">subashsaajan@gmail.com</a>
+    <span class="sep">&middot;</span>
+    <a href="https://github.com/Subash-Saajan">GitHub</a>
+    <span class="sep">&middot;</span>
+    <a href="https://www.linkedin.com/in/subash-saajan/">LinkedIn</a>
+    <span class="sep">&middot;</span>
+    <a href="tel:+917339081125">+91&nbsp;73390&nbsp;81125</a>
+  </nav>
+
+  <section id="about">
+    <h2>About</h2>
+    <p class="lede">
+      I'm a full-stack engineer who builds production AI systems &mdash; agentic LLM
+      applications, RAG pipelines, and the web products that ship them.
+    </p>
+    <p>
+      Day to day I work with LangGraph, Anthropic Claude, Python, and TypeScript at
+      startup speed, owning features end-to-end from architecture through AWS
+      deployment. My habit is shipping AI features that are both fast and safe, with a
+      human in the loop wherever a model touches something that matters.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-row"><div class="k">AI / LLM</div><div class="v">LangGraph, LangChain, RAG, Embeddings &amp; Vector Search, Prompt Engineering, AI Agents, Anthropic Claude, OpenAI, Gemini</div></div>
+      <div class="skill-row"><div class="k">Backend</div><div class="v">FastAPI, Flask, Node.js, NestJS, Celery, REST APIs, Go (Fiber), Prisma</div></div>
+      <div class="skill-row"><div class="k">Languages</div><div class="v">Python, TypeScript, JavaScript, Go, Java, C++, Kotlin, SQL</div></div>
+      <div class="skill-row"><div class="k">Frontend</div><div class="v">Next.js, React, TailwindCSS, HTML/CSS</div></div>
+      <div class="skill-row"><div class="k">Data &amp; Cloud</div><div class="v">PostgreSQL (pgvector), Redis, MongoDB, Firebase, AWS (ECS, RDS), Docker, Terraform, GitHub Actions</div></div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Software Engineer</span>
+        <span class="entry-meta">Feb 2026 &ndash; Present</span>
+      </div>
+      <div class="entry-sub">Sentellent &middot; Remote</div>
+      <ul>
+        <li>Built an <strong>agentic teaching assistant</strong> on LangGraph + Anthropic Claude that generates and batch-edits course content &mdash; assignments, quizzes, discussions, rubrics &mdash; with human-in-the-loop preview and approval before anything is saved.</li>
+        <li>Designed an <strong>AI Evaluator</strong> that auto-grades student work against its rubrics, backed by a failure-retry queue for resilience and an instructor review UI to verify and adjust scores.</li>
+        <li>Built a <strong>RAG layer</strong> over course materials on PostgreSQL + pgvector &mdash; embedding search, reranking, and long-term memory &mdash; grounding responses in each course's own content.</li>
+        <li>Owned <strong>Canvas LMS integration</strong> end-to-end: course versioning, IMSCC import/export, gradebook sync, and bulk submission import; shipped via GitHub PR and CI/CD on AWS (ECS).</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Freelance Software Developer</span>
+        <span class="entry-meta">Apr 2025 &ndash; Present</span>
+      </div>
+      <div class="entry-sub">Multiple Clients &middot; Remote</div>
+      <ul>
+        <li>Engineered full-stack applications for 5+ clients with React, Node.js, and Firebase &mdash; scalable architecture, secure authentication, and optimized data flows.</li>
+        <li>Designed backend services with REST APIs, role-based access control, and structured validation pipelines for reliability and maintainability.</li>
+        <li>Built admin dashboards with modular components and clean state management, letting non-technical teams manage content independently.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Selected Projects</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Cortex AI &mdash; Agentic Chief of Staff</span>
+        <span class="entry-meta proj-links"><a href="https://cortex.subashsaajan.site/">live &#8599;</a> &middot; <a href="https://github.com/Subash-Saajan/cortex_agent">github &#8599;</a></span>
+      </div>
+      <ul>
+        <li>An autonomous assistant that manages email and calendar through agentic workflows on LangGraph and Gemini 2.0 Flash.</li>
+        <li>Hybrid long-term memory on PostgreSQL + pgvector for semantic search and RAG over persistent user context.</li>
+        <li>Google Workspace APIs (Gmail, Calendar) via OAuth 2.0 + JWT, with human-in-the-loop approval for sensitive actions.</li>
+        <li>Production cloud deploy on AWS (ECS Fargate, RDS, ALB) using Docker, Terraform, and CI/CD via GitHub Actions.</li>
+      </ul>
+      <div class="stack">LangGraph &middot; Gemini &middot; PostgreSQL/pgvector &middot; AWS &middot; Terraform</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">PrintEz &mdash; IoT Printing Platform</span>
+        <span class="entry-meta proj-links"><a href="https://github.com/Subash-Saajan/PrintEZ">github &#8599;</a></span>
+      </div>
+      <ul>
+        <li>Multi-tenant SaaS print platform serving self-service IoT vending machines and managed print shops from one shared backend, on Next.js 14 and Go (Fiber).</li>
+        <li>Dual-agent system &mdash; a Raspberry Pi kiosk agent and a Windows shop agent with an embedded React dashboard &mdash; with job polling, smart color/B&amp;W printer routing, and auto-update via GitHub Releases.</li>
+        <li>Cashfree UPI payments with automated platform/vendor revenue sharing; deployed on a Linux VPS with Docker Compose and Nginx (TLS), CI/CD cross-compiling ARMv7 and Windows binaries per release.</li>
+      </ul>
+      <div class="stack">Next.js &middot; Go (Fiber) &middot; Raspberry Pi &middot; Docker Compose &middot; Nginx</div>
+    </div>
+  </section>
+
+  <section id="more-projects">
+    <h2>More Projects</h2>
+    <div class="proj-list">
+
+      <div class="proj-item">
+        <div class="pi-main">
+          <div class="pi-name"><a href="https://github.com/Subash-Saajan/ClipSmith">ClipSmith</a></div>
+          <div class="pi-desc">AI short-form content agent that turns long videos into clips.</div>
+        </div>
+        <div class="pi-links"><a href="https://github.com/Subash-Saajan/ClipSmith">Code &#8599;</a></div>
+      </div>
+
+      <div class="proj-item">
+        <div class="pi-main">
+          <div class="pi-name"><a href="https://anfed.vercel.app">Anfed</a></div>
+          <div class="pi-desc">Dynamic website and admin CMS for a Farmer Producer Organisation.</div>
+        </div>
+        <div class="pi-links"><a href="https://anfed.vercel.app">Live &#8599;</a><a href="https://github.com/Subash-Saajan/Anfed">Code &#8599;</a></div>
+      </div>
+
+      <div class="proj-item">
+        <div class="pi-main">
+          <div class="pi-name"><a href="https://lowtwins.vercel.app">LowTwins</a></div>
+          <div class="pi-desc">Next.js e-commerce storefront for a clothing brand.</div>
+        </div>
+        <div class="pi-links"><a href="https://lowtwins.vercel.app">Live &#8599;</a><a href="https://github.com/Subash-Saajan/LowTwins">Code &#8599;</a></div>
+      </div>
+
+      <div class="proj-item">
+        <div class="pi-main">
+          <div class="pi-name"><a href="https://vadavai-matha.vercel.app">Vadavai Matha</a></div>
+          <div class="pi-desc">Community temple website built with TypeScript and Next.js.</div>
+        </div>
+        <div class="pi-links"><a href="https://vadavai-matha.vercel.app">Live &#8599;</a><a href="https://github.com/Subash-Saajan/Vadavai-Matha">Code &#8599;</a></div>
+      </div>
+
+      <div class="proj-item">
+        <div class="pi-main">
+          <div class="pi-name"><a href="https://md-manpower-service.vercel.app">ManPower Supply</a></div>
+          <div class="pi-desc">Service website for a manpower / staffing agency.</div>
+        </div>
+        <div class="pi-links"><a href="https://md-manpower-service.vercel.app">Live &#8599;</a><a href="https://github.com/Subash-Saajan/ManPowerSupply">Code &#8599;</a></div>
+      </div>
+
+    </div>
+    <p style="margin-top:16px; font-size:15.5px; color:var(--muted)">
+      More on <a href="https://github.com/Subash-Saajan">github.com/Subash-Saajan</a>.
+    </p>
+  </section>
+
+  <section id="writing">
+    <h2>Publications</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">VANET Security through Blockchain-Based Location Verification</span>
+        <span class="entry-meta">Best Paper &middot; 2024</span>
+      </div>
+      <p style="margin-top:8px">
+        Springer CCIS, presented at ASCIS 2024 (Marwadi University, Rajkot). A
+        blockchain-enhanced geographic routing framework to strengthen location
+        authentication and mitigate spoofing in VANETs. Awarded Best Paper.
+        <a href="https://doi.org/10.1007/978-3-031-86302-8_25">DOI: 10.1007/978-3-031-86302-8_25</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="credentials">
+    <h2>Certifications &amp; Education</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">AWS Certified Solutions Architect &ndash; Associate</span>
+        <span class="entry-meta">Apr 2024</span>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">AWS Certified Cloud Practitioner</span>
+        <span class="entry-meta">Jan 2024</span>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">B.Tech, Computer Engineering (AI &amp; Robotics)</span>
+        <span class="entry-meta">2021 &ndash; 2025</span>
+      </div>
+      <div class="entry-sub">Vellore Institute of Technology, Chennai</div>
+    </div>
+  </section>
+
+  <footer>
+    <span>&copy; 2026 Subash Saajan J</span>
+    <span>
+      <a href="mailto:subashsaajan@gmail.com">Email</a> &middot;
+      <a href="https://github.com/Subash-Saajan">GitHub</a> &middot;
+      <a href="https://www.linkedin.com/in/subash-saajan/">LinkedIn</a>
+    </span>
+  </footer>
+
+</div>
+</body>
+</html>

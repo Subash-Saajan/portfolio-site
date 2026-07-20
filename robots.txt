@@ -1,0 +1,40 @@
+# robots.txt — Subash Saajan J
+#
+# The deliberate choice here (borrowed from the Little Rome build) is to WELCOME
+# the AI crawlers rather than block them. For a personal portfolio, being read
+# and cited when someone asks an assistant "who is Subash Saajan" IS the win.
+#
+# Note these are separate agents with separate jobs:
+#   OAI-SearchBot / ChatGPT-User   — answer-time retrieval and citation
+#   GPTBot / ClaudeBot / CCBot     — corpus crawling
+#   Google-Extended                — gates AI Overviews & Gemini grounding.
+#                                    NOT Googlebot; allowing it is what admits
+#                                    this site to AI Overviews.
+
+User-agent: *
+Allow: /
+
+# OpenAI
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+# Anthropic
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+# Google (AI Overviews / Gemini grounding — distinct from Googlebot)
+User-agent: Google-Extended
+# Perplexity
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+# Apple (Siri / Apple Intelligence)
+User-agent: Applebot
+User-agent: Applebot-Extended
+# Microsoft (Copilot, and in part ChatGPT search)
+User-agent: bingbot
+# Common Crawl — the corpus many models are still trained from
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://subashsaajan.site/sitemap.xml
+Host: https://subashsaajan.site
