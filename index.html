@@ -89,6 +89,9 @@
     font-family: 'Charter', 'Georgia', 'Cambria', 'Times New Roman', serif;
     font-size: 18px;
     line-height: 1.6;
+    /* Never let a long URL/email push the page into sideways scroll on phones. */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
   .wrap {
     max-width: 720px;
@@ -218,14 +221,44 @@
   footer a { color: var(--link); text-decoration: none; }
   footer a:hover { text-decoration: underline; }
 
-  @media (max-width: 560px) {
+  /* ---- tablets / small laptops ---- */
+  @media (max-width: 620px) {
     body { font-size: 17px; }
-    .wrap { padding: 36px 20px 64px; }
+    .wrap { padding: 40px 20px 64px; }
+    section { margin-top: 34px; }
+    .lede { font-size: 17.5px; }
+
     header.masthead { gap: 18px; }
-    .portrait { width: 76px; height: 76px; flex-basis: 76px; }
+    .portrait { width: 78px; height: 78px; flex-basis: 78px; }
     .masthead h1 { font-size: 27px; }
+    .masthead .role { font-size: 17px; }
+
+    /* Roomier tap targets for the contact links. */
+    nav.links { font-size: 16px; line-height: 2; }
+    nav.links .sep { margin: 0 6px; }
+
+    /* Stack each title above its date/links, left-aligned (no lonely
+       right-floated date on its own line). */
+    .entry-head { flex-direction: column; gap: 2px; }
+    .entry-meta { white-space: normal; }
+
     .skill-row { grid-template-columns: 1fr; gap: 2px; }
-    .skill-row .k { font-size: 14px; text-transform: uppercase; letter-spacing: 0.8px; }
+    .skill-row .k { font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--ink); }
+    .skill-row .v { font-size: 15.5px; }
+
+    /* Project list: name/desc on top, links beneath, all left-aligned. */
+    .proj-item { flex-direction: column; gap: 4px; }
+    .proj-item .pi-links a:first-child { margin-left: 0; }
+    .proj-item .pi-links a { margin-left: 0; margin-right: 16px; }
+  }
+
+  /* ---- narrow phones ---- */
+  @media (max-width: 400px) {
+    .wrap { padding: 32px 16px 56px; }
+    .masthead h1 { font-size: 24px; }
+    header.masthead { gap: 14px; }
+    .portrait { width: 68px; height: 68px; flex-basis: 68px; }
+    footer { flex-direction: column; }
   }
 </style>
 </head>
