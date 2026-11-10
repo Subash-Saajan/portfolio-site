@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121417" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <title>Subash Saajan J, Full-Stack Engineer</title>
 <meta name="description" content="Subash Saajan J, full-stack engineer working in TypeScript, Go and Python. Builds AI features, web and mobile apps, and the systems behind them, end to end.">
 <meta name="author" content="Subash Saajan J">
@@ -16,13 +20,16 @@
 <meta property="og:title" content="Subash Saajan J, Full-Stack Engineer">
 <meta property="og:description" content="Full-stack engineer working in TypeScript, Go and Python. Builds AI features, web and mobile apps, and the systems behind them.">
 <meta property="og:url" content="https://subashsaajan.site/">
-<meta property="og:image" content="https://subashsaajan.site/subash.jpeg">
+<meta property="og:image" content="https://subashsaajan.site/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Subash Saajan J, Full-Stack Engineer">
 
 <!-- Twitter / X card -->
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Subash Saajan J, Full-Stack Engineer">
 <meta name="twitter:description" content="Full-stack engineer working in TypeScript, Go and Python. Builds AI features, web and mobile apps, and the systems behind them.">
-<meta name="twitter:image" content="https://subashsaajan.site/subash.jpeg">
+<meta name="twitter:image" content="https://subashsaajan.site/og-image.png">
 
 <!-- Structured data. One @graph with three nodes cross-referenced by @id (the
      site, the page, and the person) so search engines resolve one entity, not
@@ -78,6 +85,23 @@
     --link: #0f7a63;
     --link-hover: #12a081;
     --accent: #0f7a63;
+    --chip: #ffffff;
+    --on-accent: #ffffff;
+  }
+  /* Dark mode follows the phone/OS setting. */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #e6e8eb;
+      --muted: #a9b0b8;
+      --faint: #7f8790;
+      --line: #2a2f35;
+      --paper: #121417;
+      --link: #4cc3a2;
+      --link-hover: #7dd8bf;
+      --accent: #4cc3a2;
+      --chip: #1a1d21;
+      --on-accent: #0b1f1a;
+    }
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
@@ -184,19 +208,20 @@
 
   .stack { font-size: 14px; color: var(--faint); margin-top: 6px; font-style: italic; }
 
-  /* ---- compact project list ---- */
+  /* ---- compact project list ----
+     Grid, not flex: name + description on the left, links pinned top-right.
+     (The old flex version stacked to a column on phones, where its 340px
+     flex-basis turned into a 340px HEIGHT and left a big gap under each row.) */
   .proj-list { margin-top: 4px; }
   .proj-item {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 16px;
     align-items: baseline;
-    gap: 14px;
-    flex-wrap: wrap;
     padding: 12px 0;
     border-top: 1px solid var(--line);
   }
   .proj-item:first-child { border-top: 0; }
-  .proj-item .pi-main { flex: 1 1 340px; }
   .proj-item .pi-name { font-weight: 700; font-size: 18px; }
   .proj-item .pi-name a { color: var(--ink); text-decoration: none; }
   .proj-item .pi-name a:hover { color: var(--link-hover); }
@@ -205,6 +230,8 @@
   .proj-item .pi-links a { text-decoration: none; margin-left: 12px; }
   .proj-item .pi-links a:hover { text-decoration: underline; }
   .proj-item .pi-links a:first-child { margin-left: 0; }
+  .more-note { margin-top: 16px; font-size: 15.5px; color: var(--muted); }
+  nav.links a.primary { font-weight: 700; }
 
   /* ---- footer ---- */
   footer {
@@ -232,9 +259,21 @@
     .masthead h1 { font-size: 27px; }
     .masthead .role { font-size: 17px; }
 
-    /* Roomier tap targets for the contact links. */
-    nav.links { font-size: 16px; line-height: 2; }
-    nav.links .sep { margin: 0 6px; }
+    /* Contact links become thumb-sized chips; Resume is the filled one. */
+    nav.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; line-height: 1.2; }
+    nav.links .sep { display: none; }
+    nav.links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--chip);
+      font-size: 15px;
+    }
+    nav.links a:hover { text-decoration: none; border-color: var(--link); }
+    nav.links a.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 700; }
 
     /* Stack each title above its date/links, left-aligned (no lonely
        right-floated date on its own line). */
@@ -245,10 +284,9 @@
     .skill-row .k { font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--ink); }
     .skill-row .v { font-size: 15.5px; }
 
-    /* Project list: name/desc on top, links beneath, all left-aligned. */
-    .proj-item { flex-direction: column; gap: 4px; }
-    .proj-item .pi-links a:first-child { margin-left: 0; }
-    .proj-item .pi-links a { margin-left: 0; margin-right: 16px; }
+    .proj-item { column-gap: 12px; }
+    .proj-item .pi-name { font-size: 17px; }
+    .proj-item .pi-desc { font-size: 15px; }
   }
 
   /* ---- narrow phones ---- */
@@ -273,7 +311,7 @@
   </header>
 
   <nav class="links">
-    <a href="resume.pdf">Resume</a>
+    <a class="primary" href="resume.pdf">Resume (PDF)</a>
     <span class="sep">&middot;</span>
     <a href="mailto:subashsaajan@gmail.com">subashsaajan@gmail.com</a>
     <span class="sep">&middot;</span>
@@ -287,9 +325,9 @@
   <section id="about">
     <h2>About</h2>
     <p class="lede">
-      I'm a full-stack engineer who builds with TypeScript, Go and Python. I
-      build products end to end, from the database and APIs to the web app and
-      deployment.
+      I'm a full-stack engineer working in TypeScript, Go and Python. I see
+      each feature through from start to finish, from the database and APIs to
+      the screens people use and the servers they run on.
     </p>
     <p>
       Currently, on an AI learning platform for teachers and students, I designed
@@ -324,7 +362,7 @@
         <li>Rebuilt the <strong>AI assistant</strong> that handles tasks across the platform as a multi-step agent on LangGraph, with long-term memory and tools limited to what each user's role allows.</li>
         <li>Built the <strong>hybrid RAG</strong> behind the assistant, combining vector and keyword search so answers come from each course's own material, and it declines when the sources don't support an answer.</li>
         <li>Built an <strong>evaluation harness</strong> that runs simulated teacher and student conversations and scores the replies with an LLM judge, to catch drops in answer quality.</li>
-        <li>Ship features across the whole product, from the database and backend APIs to the React/TypeScript app on AWS.</li>
+        <li>Ship features across the whole product, from the database and backend APIs to the React/TypeScript app on AWS, including <strong>hardening API access control</strong>.</li>
       </ul>
     </div>
   </section>
@@ -373,6 +411,45 @@
         <li>Was deployed on AWS (ECS Fargate, RDS) with Docker, Terraform and GitHub Actions.</li>
       </ul>
       <div class="stack">LangGraph &middot; Gemini &middot; PostgreSQL &middot; AWS &middot; Terraform</div>
+    </div>
+  </section>
+
+  <section id="writing">
+    <h2>Publications</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">VANET Security through Blockchain-Based Location Verification</span>
+        <span class="entry-meta">Best Paper &middot; 2024</span>
+      </div>
+      <p style="margin-top:8px">
+        Springer CCIS, presented at ASCIS 2024 (Marwadi University, Rajkot). A
+        blockchain-enhanced geographic routing framework to strengthen location
+        authentication and mitigate spoofing in VANETs. Awarded Best Paper.
+        <a href="https://doi.org/10.1007/978-3-031-86302-8_25">DOI: 10.1007/978-3-031-86302-8_25</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="credentials">
+    <h2>Certifications &amp; Education</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">AWS Certified Solutions Architect &ndash; Associate</span>
+        <span class="entry-meta">Apr 2024</span>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">AWS Certified Cloud Practitioner</span>
+        <span class="entry-meta">Jan 2024</span>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">B.Tech, Computer Engineering (AI &amp; Robotics)</span>
+        <span class="entry-meta">2021 &ndash; 2025</span>
+      </div>
+      <div class="entry-sub">Vellore Institute of Technology, Chennai</div>
     </div>
   </section>
 
@@ -429,48 +506,9 @@
       </div>
 
     </div>
-    <p style="margin-top:16px; font-size:15.5px; color:var(--muted)">
+    <p class="more-note">
       More on <a href="https://github.com/Subash-Saajan">github.com/Subash-Saajan</a>.
     </p>
-  </section>
-
-  <section id="writing">
-    <h2>Publications</h2>
-    <div class="entry">
-      <div class="entry-head">
-        <span class="entry-title">VANET Security through Blockchain-Based Location Verification</span>
-        <span class="entry-meta">Best Paper &middot; 2024</span>
-      </div>
-      <p style="margin-top:8px">
-        Springer CCIS, presented at ASCIS 2024 (Marwadi University, Rajkot). A
-        blockchain-enhanced geographic routing framework to strengthen location
-        authentication and mitigate spoofing in VANETs. Awarded Best Paper.
-        <a href="https://doi.org/10.1007/978-3-031-86302-8_25">DOI: 10.1007/978-3-031-86302-8_25</a>
-      </p>
-    </div>
-  </section>
-
-  <section id="credentials">
-    <h2>Certifications &amp; Education</h2>
-    <div class="entry">
-      <div class="entry-head">
-        <span class="entry-title">AWS Certified Solutions Architect &ndash; Associate</span>
-        <span class="entry-meta">Apr 2024</span>
-      </div>
-    </div>
-    <div class="entry">
-      <div class="entry-head">
-        <span class="entry-title">AWS Certified Cloud Practitioner</span>
-        <span class="entry-meta">Jan 2024</span>
-      </div>
-    </div>
-    <div class="entry">
-      <div class="entry-head">
-        <span class="entry-title">B.Tech, Computer Engineering (AI &amp; Robotics)</span>
-        <span class="entry-meta">2021 &ndash; 2025</span>
-      </div>
-      <div class="entry-sub">Vellore Institute of Technology, Chennai</div>
-    </div>
   </section>
 
   <footer>

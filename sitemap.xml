@@ -3,11 +3,12 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://subashsaajan.site/</loc>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://subashsaajan.site/subash.jpeg</image:loc>
-      <image:title>Subash Saajan J — Full-Stack AI Engineer</image:title>
+      <image:title>Subash Saajan J, Full-Stack Engineer</image:title>
     </image:image>
   </url>
 </urlset>
