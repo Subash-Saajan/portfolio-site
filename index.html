@@ -3,9 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#121417" media="(prefers-color-scheme: dark)">
+<!-- Always light, whatever the phone's theme ("only" also asks browsers
+     not to auto-darken the page). -->
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#f7f8fa">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <title>Subash Saajan J, Full-Stack Engineer</title>
 <meta name="description" content="Subash Saajan J, full-stack engineer working in TypeScript, Go and Python. Builds AI features, web and mobile apps, and the systems behind them, end to end.">
@@ -87,21 +88,7 @@
     --accent: #0f7a63;
     --chip: #ffffff;
     --on-accent: #ffffff;
-  }
-  /* Dark mode follows the phone/OS setting. */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #e6e8eb;
-      --muted: #a9b0b8;
-      --faint: #7f8790;
-      --line: #2a2f35;
-      --paper: #121417;
-      --link: #4cc3a2;
-      --link-hover: #7dd8bf;
-      --accent: #4cc3a2;
-      --chip: #1a1d21;
-      --on-accent: #0b1f1a;
-    }
+    color-scheme: only light;
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
