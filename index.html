@@ -86,8 +86,6 @@
     --link: #0f7a63;
     --link-hover: #12a081;
     --accent: #0f7a63;
-    --chip: #ffffff;
-    --on-accent: #ffffff;
     color-scheme: only light;
   }
   * { box-sizing: border-box; }
@@ -218,7 +216,6 @@
   .proj-item .pi-links a:hover { text-decoration: underline; }
   .proj-item .pi-links a:first-child { margin-left: 0; }
   .more-note { margin-top: 16px; font-size: 15.5px; color: var(--muted); }
-  nav.links a.primary { font-weight: 700; }
 
   /* External-link arrow, drawn as an SVG mask in the link's own color.
      The ↗ character turned into a colored emoji on iPhones. */
@@ -258,21 +255,9 @@
     .masthead h1 { font-size: 27px; }
     .masthead .role { font-size: 17px; }
 
-    /* Contact links become thumb-sized chips; Resume is the filled one. */
-    nav.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; line-height: 1.2; }
-    nav.links .sep { display: none; }
-    nav.links a {
-      display: inline-flex;
-      align-items: center;
-      min-height: 40px;
-      padding: 8px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--chip);
-      font-size: 15px;
-    }
-    nav.links a:hover { text-decoration: none; border-color: var(--link); }
-    nav.links a.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 700; }
+    /* Roomier tap targets for the contact links. */
+    nav.links { font-size: 16px; line-height: 2; }
+    nav.links .sep { margin: 0 6px; }
 
     /* Stack each title above its date/links, left-aligned (no lonely
        right-floated date on its own line). */
@@ -310,7 +295,7 @@
   </header>
 
   <nav class="links">
-    <a class="primary" href="resume.pdf">Resume (PDF)</a>
+    <a href="resume.pdf">Resume</a>
     <span class="sep">&middot;</span>
     <a href="mailto:subashsaajan@gmail.com">subashsaajan@gmail.com</a>
     <span class="sep">&middot;</span>
@@ -458,10 +443,10 @@
 
       <div class="proj-item">
         <div class="pi-main">
-          <div class="pi-name"><a href="https://brightybeauty.com">Brighty Beauty</a></div>
-          <div class="pi-desc">Storefront for a beauty &amp; skincare brand.</div>
+          <div class="pi-name"><a href="https://vadavai-matha.vercel.app">Vadavai Matha</a></div>
+          <div class="pi-desc">Community temple website built with TypeScript and Next.js.</div>
         </div>
-        <div class="pi-links"><a href="https://brightybeauty.com">Live<span class="ext" aria-hidden="true"></span></a></div>
+        <div class="pi-links"><a href="https://vadavai-matha.vercel.app">Live<span class="ext" aria-hidden="true"></span></a><a href="https://github.com/Subash-Saajan/Vadavai-Matha">Code<span class="ext" aria-hidden="true"></span></a></div>
       </div>
 
       <div class="proj-item">
@@ -498,10 +483,10 @@
 
       <div class="proj-item">
         <div class="pi-main">
-          <div class="pi-name"><a href="https://vadavai-matha.vercel.app">Vadavai Matha</a></div>
-          <div class="pi-desc">Community temple website built with TypeScript and Next.js.</div>
+          <div class="pi-name"><a href="https://brightybeauty.com">Brighty Beauty</a></div>
+          <div class="pi-desc">Storefront for a beauty &amp; skincare brand.</div>
         </div>
-        <div class="pi-links"><a href="https://vadavai-matha.vercel.app">Live<span class="ext" aria-hidden="true"></span></a><a href="https://github.com/Subash-Saajan/Vadavai-Matha">Code<span class="ext" aria-hidden="true"></span></a></div>
+        <div class="pi-links"><a href="https://brightybeauty.com">Live<span class="ext" aria-hidden="true"></span></a></div>
       </div>
 
     </div>
