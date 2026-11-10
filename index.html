@@ -233,6 +233,18 @@
   .more-note { margin-top: 16px; font-size: 15.5px; color: var(--muted); }
   nav.links a.primary { font-weight: 700; }
 
+  /* External-link arrow, drawn as an SVG mask in the link's own color.
+     The ↗ character turned into a colored emoji on iPhones. */
+  .ext {
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    margin-left: 0.25em;
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 9.5l7-7M4 2.5h5.5V8'/%3E%3C/svg%3E") no-repeat center / contain;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 9.5l7-7M4 2.5h5.5V8'/%3E%3C/svg%3E") no-repeat center / contain;
+  }
+
   /* ---- footer ---- */
   footer {
     margin-top: 52px;
@@ -373,7 +385,7 @@
     <div class="entry">
       <div class="entry-head">
         <span class="entry-title">PrintEz: Printing Platform</span>
-        <span class="entry-meta proj-links"><a href="https://printez.app">printez.app &#8599;</a></span>
+        <span class="entry-meta proj-links"><a href="https://printez.app">printez.app<span class="ext" aria-hidden="true"></span></a></span>
       </div>
       <ul>
         <li>Customers scan a QR code, upload a document, pay by UPI and collect the print, either at a self-service kiosk or at a partner print shop.</li>
@@ -389,7 +401,7 @@
     <div class="entry">
       <div class="entry-head">
         <span class="entry-title">DR20 HomeCare: Healthcare Booking App</span>
-        <span class="entry-meta proj-links"><a href="https://www.dr20.in">dr20.in &#8599;</a></span>
+        <span class="entry-meta proj-links"><a href="https://www.dr20.in">dr20.in<span class="ext" aria-hidden="true"></span></a></span>
       </div>
       <div class="entry-sub">Lead engineer, for a charitable trust</div>
       <ul>
@@ -403,7 +415,7 @@
     <div class="entry">
       <div class="entry-head">
         <span class="entry-title">Cortex: AI Email and Calendar Assistant</span>
-        <span class="entry-meta proj-links"><a href="https://github.com/Subash-Saajan/cortex_agent">github &#8599;</a></span>
+        <span class="entry-meta proj-links"><a href="https://github.com/Subash-Saajan/cortex_agent">github<span class="ext" aria-hidden="true"></span></a></span>
       </div>
       <ul>
         <li>An assistant built on LangGraph and Gemini that drafts emails and calendar events, and the user confirms before anything is sent.</li>
@@ -462,7 +474,7 @@
           <div class="pi-name"><a href="https://brightybeauty.com">Brighty Beauty</a></div>
           <div class="pi-desc">Storefront for a beauty &amp; skincare brand.</div>
         </div>
-        <div class="pi-links"><a href="https://brightybeauty.com">Live &#8599;</a></div>
+        <div class="pi-links"><a href="https://brightybeauty.com">Live<span class="ext" aria-hidden="true"></span></a></div>
       </div>
 
       <div class="proj-item">
@@ -470,7 +482,7 @@
           <div class="pi-name"><a href="https://feniviresearch.in">Fenivi Research</a></div>
           <div class="pi-desc">Website for a research &amp; consulting firm.</div>
         </div>
-        <div class="pi-links"><a href="https://feniviresearch.in">Live &#8599;</a></div>
+        <div class="pi-links"><a href="https://feniviresearch.in">Live<span class="ext" aria-hidden="true"></span></a></div>
       </div>
 
       <div class="proj-item">
@@ -478,7 +490,7 @@
           <div class="pi-name"><a href="https://gbsaccelerate.com">GBS Accelerate</a></div>
           <div class="pi-desc">Online learning and course-access platform.</div>
         </div>
-        <div class="pi-links"><a href="https://gbsaccelerate.com">Live &#8599;</a></div>
+        <div class="pi-links"><a href="https://gbsaccelerate.com">Live<span class="ext" aria-hidden="true"></span></a></div>
       </div>
 
       <div class="proj-item">
@@ -486,7 +498,7 @@
           <div class="pi-name"><a href="https://github.com/Subash-Saajan/ClipSmith">ClipSmith</a></div>
           <div class="pi-desc">AI short-form content agent that turns long videos into clips.</div>
         </div>
-        <div class="pi-links"><a href="https://github.com/Subash-Saajan/ClipSmith">Code &#8599;</a></div>
+        <div class="pi-links"><a href="https://github.com/Subash-Saajan/ClipSmith">Code<span class="ext" aria-hidden="true"></span></a></div>
       </div>
 
       <div class="proj-item">
@@ -494,7 +506,7 @@
           <div class="pi-name"><a href="https://anfed.vercel.app">Anfed</a></div>
           <div class="pi-desc">Dynamic website and admin CMS for a Farmer Producer Organisation.</div>
         </div>
-        <div class="pi-links"><a href="https://anfed.vercel.app">Live &#8599;</a><a href="https://github.com/Subash-Saajan/Anfed">Code &#8599;</a></div>
+        <div class="pi-links"><a href="https://anfed.vercel.app">Live<span class="ext" aria-hidden="true"></span></a><a href="https://github.com/Subash-Saajan/Anfed">Code<span class="ext" aria-hidden="true"></span></a></div>
       </div>
 
       <div class="proj-item">
@@ -502,7 +514,7 @@
           <div class="pi-name"><a href="https://vadavai-matha.vercel.app">Vadavai Matha</a></div>
           <div class="pi-desc">Community temple website built with TypeScript and Next.js.</div>
         </div>
-        <div class="pi-links"><a href="https://vadavai-matha.vercel.app">Live &#8599;</a><a href="https://github.com/Subash-Saajan/Vadavai-Matha">Code &#8599;</a></div>
+        <div class="pi-links"><a href="https://vadavai-matha.vercel.app">Live<span class="ext" aria-hidden="true"></span></a><a href="https://github.com/Subash-Saajan/Vadavai-Matha">Code<span class="ext" aria-hidden="true"></span></a></div>
       </div>
 
     </div>
