@@ -10,7 +10,7 @@ Also known as: Subash Saajan. GitHub: Subash-Saajan.
 
 ## Projects
 
-- [PrintEz](https://printez.app): a printing platform. Customers scan a QR code, upload a document, pay by UPI and collect the print at a self-service kiosk or a partner print shop. Go (Fiber) backend with PostgreSQL, Redis and Cloudflare R2, a Next.js customer site, and device software in Go (a Raspberry Pi kiosk agent and a Windows app for shops). Print jobs are crash-safe and device updates are signed.
+- [PrintEz](https://printez.app): a printing platform. Customers scan a QR code, upload a document, pay by UPI and collect the print at a self-service kiosk or a partner print shop. Go (Fiber) backend with PostgreSQL, Redis and Cloudflare R2, a Next.js customer site, and a Windows app in Go for print shops that keeps a crash or power cut from losing or double-printing a paid job, and only installs signed updates.
 - [DR20 HomeCare](https://www.dr20.in): lead engineer on a healthcare booking app for a charitable trust. TypeScript monorepo with a React Native (Expo) Android app, a NestJS backend on PostgreSQL, a React admin console and a Next.js website, hosted on Google Cloud.
 - [Cortex](https://github.com/Subash-Saajan/cortex_agent): an AI email and calendar assistant on LangGraph and Gemini. Drafts emails and calendar events that the user confirms before anything is sent. Long-term memory on PostgreSQL with pgvector, Gmail and Calendar through Google OAuth. Was deployed on AWS (ECS Fargate, RDS) with Docker, Terraform and GitHub Actions.
 - [Vadavai Matha](https://vadavai-matha.vercel.app): bilingual (English and Tamil) website for the Holy Family Shrine in Vadakkankulam, built with Next.js and TypeScript, with structured data and cited history pages.
