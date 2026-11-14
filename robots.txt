@@ -7,9 +7,16 @@
 # Note these are separate agents with separate jobs:
 #   OAI-SearchBot / ChatGPT-User   — answer-time retrieval and citation
 #   GPTBot / ClaudeBot / CCBot     — corpus crawling
-#   Google-Extended                — gates AI Overviews & Gemini grounding.
-#                                    NOT Googlebot; allowing it is what admits
-#                                    this site to AI Overviews.
+#   Google-Extended                — Gemini training and grounding. Not
+#                                    Googlebot; AI Overviews come from normal
+#                                    Googlebot crawling.
+#
+# Cloudflare can prepend its own "managed robots.txt" that DISALLOWS GPTBot,
+# ClaudeBot, Google-Extended etc. and can 403 them at the edge. Keep both
+# "Block AI bots" and the managed robots.txt switched OFF for this zone
+# (dashboard > subashsaajan.site > AI Crawl Control), or this file is ignored.
+#
+# Plain-text summary for language models: https://subashsaajan.site/llms.txt
 
 User-agent: *
 Allow: /

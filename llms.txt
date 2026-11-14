@@ -1,0 +1,41 @@
+# Subash Saajan J
+
+> Full-stack engineer based in Tamil Nadu, India, working remotely. Writes TypeScript, Go and Python, and builds products end to end: the database and APIs, the web and mobile apps people use, the AI features inside them, and the cloud setup they run on.
+
+Also known as: Subash Saajan. GitHub: Subash-Saajan.
+
+## Work
+
+- Software Engineer at Sentellent (Feb 2026 to present, remote). An AI learning platform for teachers and students. Designed and built its AI grading system, where teachers review every grade before release. Rebuilt the platform's AI assistant as a multi-step LangGraph agent with long-term memory and tools limited to each user's role. Built the hybrid RAG behind it (vector plus keyword search over each course's own material) and an evaluation harness that scores simulated conversations with an LLM judge. Ships across the whole product: PostgreSQL, Python backend APIs, the React/TypeScript app, and AWS.
+- Freelance since 2025: websites and web apps for small businesses and organisations, built and deployed end to end.
+
+## Projects
+
+- [PrintEz](https://printez.app): a printing platform. Customers scan a QR code, upload a document, pay by UPI and collect the print at a self-service kiosk or a partner print shop. Go (Fiber) backend with PostgreSQL, Redis and Cloudflare R2, a Next.js customer site, and device software in Go (a Raspberry Pi kiosk agent and a Windows app for shops). Print jobs are crash-safe and device updates are signed.
+- [DR20 HomeCare](https://www.dr20.in): lead engineer on a healthcare booking app for a charitable trust. TypeScript monorepo with a React Native (Expo) Android app, a NestJS backend on PostgreSQL, a React admin console and a Next.js website, hosted on Google Cloud.
+- [Cortex](https://github.com/Subash-Saajan/cortex_agent): an AI email and calendar assistant on LangGraph and Gemini. Drafts emails and calendar events that the user confirms before anything is sent. Long-term memory on PostgreSQL with pgvector, Gmail and Calendar through Google OAuth. Was deployed on AWS (ECS Fargate, RDS) with Docker, Terraform and GitHub Actions.
+- [Vadavai Matha](https://vadavai-matha.vercel.app): bilingual (English and Tamil) website for the Holy Family Shrine in Vadakkankulam, built with Next.js and TypeScript, with structured data and cited history pages.
+- [ClipSmith](https://github.com/Subash-Saajan/ClipSmith): turns long YouTube videos into short clips using speech-to-text and an LLM, with a NestJS and BullMQ job queue.
+- Client sites: [Fenivi Research](https://feniviresearch.in), [GBS Accelerate](https://gbsaccelerate.com), [Anfed](https://anfed.vercel.app), [Brighty Beauty](https://brightybeauty.com).
+
+## Skills
+
+- Languages: TypeScript, Go, Python, SQL
+- Frontend: React, Next.js, React Native (Expo), Tailwind CSS
+- Backend: Go (Fiber), Node.js, NestJS, Python (Flask, FastAPI), REST and OpenAPI
+- Data and cloud: PostgreSQL (pgvector, PostGIS), Redis, AWS (ECS, RDS, CloudWatch), Google Cloud (Cloud Run), Cloudflare, Docker, Terraform/OpenTofu, GitHub Actions
+- AI: LLM agents (LangGraph), OpenAI, Gemini, RAG, AI evaluation
+
+## Credentials
+
+- B.Tech, Computer Engineering (AI and Robotics), Vellore Institute of Technology, Chennai, 2021 to 2025
+- AWS Certified Solutions Architect, Associate (2024); AWS Certified Cloud Practitioner (2024)
+- Best Paper, ASCIS 2024 (Springer CCIS): VANET security through blockchain-based location verification. [DOI](https://doi.org/10.1007/978-3-031-86302-8_25)
+
+## Links
+
+- [Portfolio](https://subashsaajan.site/)
+- [Resume (PDF)](https://subashsaajan.site/resume.pdf)
+- [GitHub](https://github.com/Subash-Saajan)
+- [LinkedIn](https://www.linkedin.com/in/subash-saajan/)
+- Email: subashsaajan@gmail.com
